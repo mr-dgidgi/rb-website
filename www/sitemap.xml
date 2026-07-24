@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://recoverybox.fr/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/"/>
+    </url>
+    <url>
+        <loc>https://recoverybox.fr/blog/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/blog/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/blog/"/>
+    </url>
+    <url>
+        <loc>https://recoverybox.fr/fr/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/"/>
+    </url>
+    <url>
+        <loc>https://recoverybox.fr/fr/blog/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/blog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/blog/"/>
+    </url>
+</urlset>
