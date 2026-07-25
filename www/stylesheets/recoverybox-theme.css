@@ -225,6 +225,13 @@
   margin-bottom: 2rem;
 }
 
+/* Section Title */
+.rb-section-title {
+  border-left: 4px solid var(--rb-accent-camel);
+  padding-left: 1rem;
+  margin-top: 3rem;
+}
+
 /* Feature Grid */
 .rb-grid {
   display: grid;
