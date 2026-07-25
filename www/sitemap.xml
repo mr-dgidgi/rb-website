@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://recoverybox.fr/</loc>
-        <lastmod>2026-07-25</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/"/>
+         <loc>https://recoverybox.fr/en/</loc>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
-        <loc>https://recoverybox.fr/blog/</loc>
-        <lastmod>2026-07-25</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/blog/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/blog/"/>
+         <loc>https://recoverybox.fr/en/blog/</loc>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
-        <loc>https://recoverybox.fr/en/</loc>
-        <lastmod>2026-07-25</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/"/>
+         <loc>https://recoverybox.fr/en/blog/2026/07/26/recoverybox-v140-release/</loc>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
-        <loc>https://recoverybox.fr/en/blog/</loc>
-        <lastmod>2026-07-25</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/blog/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/blog/"/>
+         <loc>https://recoverybox.fr/fr/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://recoverybox.fr/fr/blog/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://recoverybox.fr/fr/blog/2026/07/26/sortie-de-recoverybox-v140/</loc>
+         <lastmod>2026-07-25</lastmod>
     </url>
 </urlset>

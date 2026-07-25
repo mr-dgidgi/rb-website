@@ -25,6 +25,13 @@ extra_css:
   - stylesheets/recoverybox-theme.css
 
 extra:
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: Français
+      link: /fr/
+      lang: fr
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/mr-dgidgi/recoverybox
@@ -32,36 +39,34 @@ extra:
 
 plugins:
   - search
-  - i18n:
-      default_language: fr
-      languages:
-        - locale: fr
-          name: Français
-          default: true
-          build: true
-        - locale: en
-          name: English
-          build: true
-      nav_translations:
-        fr:
-          Accueil: Accueil
-          Blog: Blog
-          Wiki: Wiki
-        en:
-          Accueil: Home
-          Blog: Blog
-          Wiki: Wiki
   - blog:
-      blog_dir: blog
-      post_dir: blog/posts
+      blog_dir: fr/blog
+      post_date_format: full
+      post_readtime: true
+      archive: false
+      categories: false
+  - blog:
+      blog_dir: en/blog
+      post_date_format: full
+      post_readtime: true
+      archive: false
+      categories: false
 nav:
-  - Accueil: index.md
-  - Blog: blog/index.md
-  - Wiki: https://recoverybox.fr/wiki/
+  - Français:
+    - Accueil: fr/index.md
+    - Actualités: fr/blog/index.md
+    - Wiki: https://recoverybox.fr/wiki/fr/
+  - English:
+    - Home: en/index.md
+    - Blog: en/blog/index.md
+    - Wiki: https://recoverybox.fr/wiki/en/
 
 markdown_extensions:
   - attr_list
   - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

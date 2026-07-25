@@ -232,6 +232,13 @@
   margin-top: 3rem;
 }
 
+/* Section SubTitle */
+.rb-section-subtitle {
+  border-left: 4px solid var(--rb-text-muted);
+  padding-left: 1rem;
+  margin-top: 3rem;
+}
+
 /* Feature Grid */
 .rb-grid {
   display: grid;
