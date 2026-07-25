@@ -2,7 +2,7 @@
 
 PATHSOURCES="website-sources"
 PATHDESTINATION="../www"
-MKDOCS_PLUGIN="mkdocs-material,mkdocs-static-i18n -s"
+MKDOCS_PLUGIN="mkdocs-material,mkdocs-static-i18n"
 
 print_help() {
     echo "Usage: $0 "

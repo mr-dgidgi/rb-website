@@ -4,28 +4,28 @@
         <loc>https://recoverybox.fr/</loc>
         <lastmod>2026-07-24</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/"/>
     </url>
     <url>
         <loc>https://recoverybox.fr/blog/</loc>
         <lastmod>2026-07-24</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/blog/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/blog/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/blog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/blog/"/>
     </url>
     <url>
-        <loc>https://recoverybox.fr/fr/</loc>
+        <loc>https://recoverybox.fr/en/</loc>
         <lastmod>2026-07-24</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/"/>
     </url>
     <url>
-        <loc>https://recoverybox.fr/fr/blog/</loc>
+        <loc>https://recoverybox.fr/en/blog/</loc>
         <lastmod>2026-07-24</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/fr/blog/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/blog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://recoverybox.fr/en/blog/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://recoverybox.fr/blog/"/>
     </url>
 </urlset>

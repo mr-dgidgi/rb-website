@@ -1,5 +1,5 @@
-# RecoveryBox Blog
+# Blog RecoveryBox
 
-Welcome to the RecoveryBox blog — updates, tutorials, and news about the project.
+Bienvenue sur le blog de RecoveryBox — mises à jour, tutoriels et actualités du projet.
 
 ## Posts

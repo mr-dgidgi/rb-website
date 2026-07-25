@@ -6,7 +6,7 @@ repo_name: mr-dgidgi/RecoveryBox
 
 theme:
   name: material
-  custom_dir: docs/.overrides
+  language: fr
   palette:
     # Day
     - media: "(prefers-color-scheme: light)"
@@ -20,14 +20,6 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - search.highlight
-    - search.suggest
-    - content.code.copy
-    - toc.follow
 
 extra_css:
   - stylesheets/recoverybox-theme.css
@@ -38,44 +30,38 @@ extra:
       link: https://github.com/mr-dgidgi/recoverybox
       name: GitHub
 
+plugins:
+  - search
+  - i18n:
+      default_language: fr
+      languages:
+        - locale: fr
+          name: Français
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+      nav_translations:
+        fr:
+          Accueil: Accueil
+          Blog: Blog
+          Wiki: Wiki
+        en:
+          Accueil: Home
+          Blog: Blog
+          Wiki: Wiki
+  - blog:
+      blog_dir: blog
+      post_dir: blog/posts
+nav:
+  - Accueil: index.md
+  - Blog: blog/index.md
+  - Wiki: https://recoverybox.fr/wiki/
+
 markdown_extensions:
-  - admonition
-  - pymdownx.details
   - attr_list
   - md_in_html
-  - tables
-  - toc:
-      permalink: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - def_list
-
-plugins:
-  - search
-  - privacy
-  - i18n:
-      reconfigure_material: true
-      languages:
-        - locale: en
-          default: true
-          name: English
-          build: true
-        - locale: fr
-          name: Français
-          build: true
-  - blog:
-      blog_dir: blog
-      post_date_format: long
-      post_url_format: "{slug}"
-      authors_file: blog/authors.yml
-      categories: true
-      pagination_per_page: 10
-
-nav:
-  - Home: index.md
-  - Wiki: wiki/index.md
-  - Blog: blog/index.md

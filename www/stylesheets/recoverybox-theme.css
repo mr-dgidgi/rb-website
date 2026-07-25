@@ -204,3 +204,148 @@
 .md-typeset ol li strong {
   color: var(--rb-text-main);
 }
+
+/* --------------------------------------------------------------------------
+   3. LANDING PAGE COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Sections */
+.rb-section {
+  padding: 3rem 0;
+}
+
+.rb-section--alt {
+  background-color: var(--rb-bg-secondary);
+}
+
+.rb-section__title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Feature Grid */
+.rb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.rb-card {
+  background-color: var(--rb-bg-surface);
+  border: 1px solid var(--rb-border);
+  border-radius: var(--rb-radius);
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.rb-card:hover {
+  border-color: var(--rb-accent-camel);
+}
+
+.rb-card__icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.rb-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.rb-card__text {
+  font-size: 0.9rem;
+  color: var(--rb-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Installation Steps */
+.rb-steps {
+  counter-reset: rb-step;
+  list-style: none;
+  padding: 0;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.rb-steps li {
+  counter-increment: rb-step;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.rb-steps li::before {
+  content: counter(rb-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: var(--rb-accent-camel);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.rb-steps li pre {
+  margin: 0.5rem 0 0;
+}
+
+/* Definition List */
+.rb-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.rb-dl dt {
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
+  background: var(--rb-bg-surface);
+  border: 1px solid var(--rb-border);
+  border-radius: var(--rb-radius);
+  min-height: var(--rb-touch-target);
+  display: flex;
+  align-items: center;
+}
+
+.rb-dl dd {
+  padding: 0.5rem 0.75rem;
+  color: var(--rb-text-muted);
+  display: flex;
+  align-items: center;
+  border-left: 3px solid var(--rb-accent-camel);
+}
+
+/* Roadmap */
+.rb-roadmap {
+  list-style: none;
+  padding: 0;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.rb-roadmap li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rb-border);
+}
+
+.rb-roadmap__icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  color: var(--rb-status-online);
+}
