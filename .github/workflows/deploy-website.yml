@@ -9,7 +9,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+
+      - name: Install MkDocs dependencies
+        run: |
+          pip install mkdocs mkdocs-material mkdocs-static-i18n
+
+      - name: Build wiki with MkDocs
+        run: |
+          mkdocs build -f ${{ github.workspace }}/website-sources/mkdocs.yml -d ${{ github.workspace }}/www
 
       - name: Upload via SFTP
         uses: wangyucode/sftp-upload-action@v3
