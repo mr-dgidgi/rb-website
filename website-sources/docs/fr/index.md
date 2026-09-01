@@ -11,15 +11,19 @@ hide:
   }
 </style>
 
+<section class="rb-hero" markdown>
+
 # RecoveryBox {: .md-typeset .md-display-1 }
 
 ## La solution numérique en cas de rupture de la normalité. 
 
 
-[Explorer le Wiki Technique](https://recoverybox.fr/wiki/){ .md-button .md-button--primary }
-[Lire les Actualités](blog/index.md){ .md-button }
+[Wiki Technique](https://recoverybox.fr/wiki/){ .md-button .md-button--primary }
+[Actualités](blog/index.md){ .md-button }
+[Galerie](#section-galerie){ .md-button }
+[Contact](#section-contact){ .md-button }
 
----
+</section>
 
 <div class="grid cards" markdown>
 
@@ -63,6 +67,18 @@ hide:
 </div>
 
 ---
+
+<div id="section-galerie" class="grid cards rb-photo-grid" markdown>
+- ![box Outside](../images/RB_outside_simple.webp){.on-glb}
+- ![Battery Monitoring](../images/screen_bat.webp){.on-glb}
+- ![Library](../images/rb-library.webp){.on-glb}
+- ![Map](../images/rb-map.webp){.on-glb}
+- ![Meshtastic](../images/rb-meshtastic.webp){.on-glb}
+- ![Flatnotes](../images/rb-flatnotes.webp){.on-glb}
+</div>
+
+
+
 
 ## Une solution autonome {: #section-autonome .rb-section-title }
 
@@ -178,3 +194,10 @@ Les avantages d'un système sans écran :
 
 Robuste, économe et collaborative, cette architecture transforme la RecoveryBox en un véritable poste de commandement numérique partagé.
 
+## Contact {: #section-contact .rb-section-title }
+
+Pour toute question, suggestion ou demande de support, vous pouvez me contacter à l'adresse suivante : [contact@recoverybox.fr](mailto:contact@recoverybox.fr).
+
+L'ensemble de mes projets liés à la RecoveryBox est accessible sur mon [GitHub](https://github.com/mr-dgidgi).
+
+La chaine youtube est accessible à l'adresse suivante : [YouTube](https://www.youtube.com/channel/UCDNgRYKgnSsecWvqntt3EsA).
