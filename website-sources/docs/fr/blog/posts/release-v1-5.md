@@ -1,0 +1,44 @@
+---
+date: 2026-09-01
+categories:
+  - Release
+tags:
+  - 1.5.0
+---
+
+# Sortie de RecoveryBox v1.5.0
+
+La version 1.5.0 de la RecoveryBox est enfin sortie. Techniquement elle était prête depuis mi-août, disponible dans les tags du projet GitHub, mais j'ai tardé à sortir la release officielle. Je souhaitais avancer sur le logo et les améliorations graphiques du site web avant de publier la nouvelle version. Cependant, le temps passe, j'ai profité un peu de mes vacances pour couper de tout ce qui est lié à l'informatique, et ai tout naturellement laissé la RecoveryBox de côté. À l'heure où j'écris ces lignes, le logo est maintenant créé mais pas encore intégré au site web. On reviendra sur cela plus tard. Pour l'instant, parlons de cette version 1.5.0.
+
+## Nouveautés de la version 1.5.0
+
+La version 1.5.0 est un peu un fourre-tout, avec plusieurs améliorations et corrections de bugs. Promis, les prochaines versions seront plus axées sur des fonctionnalités spécifiques. Mais il me restait à intégrer divers changements mineurs pour avoir une version cohérente et fonctionnelle.
+
+Cette version intègre donc la gestion de la batterie avec les MPPT Victron. Pour cela j'ai cherché un peu à droite à gauche pour trouver les informations sur l'API VE.Direct. Je souhaitais faire cela avec du Python ou du bash. Bien que le protocole soit open source et qu'on en entende pas mal parler qu'il est facile à utiliser, j'ai trouvé très peu de projets vraiment intéressants à exploiter. Par ailleurs, la documentation est très nébuleuse aussi. Par chance, j'ai fini par tomber sur le projet [ve.direct de foxharp](https://github.com/foxharp) qui m'a permis d'avoir une bonne base pour la correspondance des différentes valeurs. J'ai voulu intégrer un arrêt propre du serveur lorsque le niveau de charge de la batterie baisse trop. Cela permet d'éviter une corruption du système en cas de perte d'alimentation. Ce système ne fonctionne que si le serveur est connecté en direct sur la batterie et non sur la sortie load des MPPT. Si c'est le cas, le MPPT va juste couper sa sortie load si la charge de la batterie baisse trop avant que le serveur n'ait pu lancer son arrêt et l'on revient au problème initial. L'ajout de ce script a aussi permis de remonter les informations concernant la batterie sur la page d'accueil de la RecoveryBox. On peut donc avoir des informations concernant le voltage de la batterie, les informations concernant l'arrivée électrique en cas de connexion sur des panneaux solaires ou une arrivée électrique ainsi que la consommation de la sortie Load si jamais elle est utilisée comme sortie 12 V pour alimenter un autre équipement.
+
+Cette version intègre aussi la possibilité d'activer le HTTPS pour tous les services sauf meshtastic-web-client (on y revient après). On est sur une intégration assez basique avec un certificat auto-signé généré lors de l'installation. Il est bien entendu possible de remplacer ce certificat par un certificat valide émis par une autorité de certification reconnue. Je vous entends déjà dire "avec Let's Encrypt c'est gratuit pour avoir un certificat valide", oui c'est vrai, mais il faut tout de même passer par la procédure de validation et de renouvellement. Avec un fournisseur standard il faut renouveler le certificat tous les ans et cela tends à devenir de plus en plus fréquent. Les certificats ayant une durée de plus en plus courte. Avec Let's Encrypt c'est gratuit mais il faut renouveler tous les 3 mois.
+
+La RecoveryBox a pour but de fonctionner hors ligne, on ne peut donc pas se baser sur un renouvellement de certificat aléatoire. On pourrait toutefois en dire qu'on met en place un système de renouvellement automatique et si le certificat expire ce n'est pas grave, on peut se connecter malgré le message d'erreur. Et c'est là que les choses me dérangent. Car pour un utilisateur non averti, s'il utilise du HTTPS avec des certificats valides il n'a jamais d'erreur, jamais d'exception à valider. Maintenant, si l'équipement se retrouve hors ligne et ne peut pas renouveler le certificat, l'utilisateur ne comprendrait pas pourquoi soudainement il reçoit un message d'erreur concernant le certificat expiré. Cela pourrait créer de la confusion, l'utilisateur allant chercher à comprendre, à réparer, voire considérant le service comme hors service. Ceci va à l'encontre de l'objectif de la RecoveryBox qui est de rester simple et fonctionnelle même hors ligne. La décision a donc été prise de fonctionner avec un certificat auto-signé. De cette manière l'utilisateur a le message d'erreur lors de la première connexion, mais une fois contournée, il ne rencontrera plus de problème lié au certificat.
+
+Le HTTPS est une fonctionnalité à activer lors de l'installation. Par défaut, il est désactivé et il faudra choisir de l'activer si l'on souhaite sécuriser les communications avec un certificat auto-signé. Cela permet de garder une configuration simple et fonctionnelle tout en offrant la possibilité de sécuriser les échanges si nécessaire.
+
+Le HTTPS n'est par contre jamais activé sur le web-client meshtastic. Ceci est possible mais lorsque l'on active le HTTPS, tous les échanges doivent être faits via HTTPS laissant l'interface en HTTP il est possible de contacter des noeuds via HTTP ou HTTPS.
+
+L'activation du HTTPS nécessite d'aller accepter un certificat auto-signé pour chacun des nodes que l'on veut administrer. Les manipulations me semblaient lourdes donc j'ai décidé de garder l'interface en HTTP quoi qu'il arrive.
+
+J'ai aussi profité de cette mise à jour pour intégrer [Flatnotes](https://github.com/dullage/flatnotes), un système de prise de notes léger et rapide. Cela permet aux utilisateurs de créer et gérer des notes directement depuis l'interface de la RecoveryBox. L'installation propose 3 modes : 
+
+- open: Le mode par défaut, une seule instance disponible en lecture et écriture sans mot de passe.
+- secure: Une instance sécurisée avec mot de passe, permettant un accès restreint aux utilisateurs autorisés.
+- full: Deux instances en parallèle, une sécurisée par mot de passe avec les droits en lecture et écriture et une seconde en lecture seule accessible sans mot de passe.
+Flatnotes génère simplement du markdown. Il peut être utilisée avec la syntaxe markdown standard ou en mode WYSIWYG (What You See Is What You Get) pour une édition plus visuelle et intuitive.
+
+Cette mise à jour intègre aussi quelques bugfix comme l'amélioration du scan des réseaux wifi, une grosse optimisation sur iptables ainsi que la modification du comportement du container openwebrx. Désormais celui-ci ne démarre que si un équipement SDR est détecté. Avant cela, le container démarrait et si aucun SDR n'était connecté à ce moment il ne pouvait jamais utiliser de SDR. Il fallait forcément que le SDR soit connecté avant que le container démarre pour qu'il soit capable de le détecter. J'ai donc mis en place une règle udev pour détecter les SDR les plus connus (RTL-SDR, Airspy, HackRF, LimeSDR, SDRplay...) pour démarrer le container openwebrx que lorsqu'un SDR est détecté.
+
+## Amélioration du site
+
+Le site devrait bientôt recevoir quelques améliorations graphiques. Il est temps d'y intégrer des images pour présenter les différentes fonctionnalités de la RecoveryBox de manière plus visuelle et attrayante. Mais surtout le logo ! J'ai pris beaucoup trop de temps à le réaliser. L'idée était bien là mais il a fallu ensuite le faire au format vectoriel. J'y ai passé pas mal de temps, je découvrais Inkscape et malgré des centaines d'heures passées sur Photoshop, je dois admettre que la logique n'est pas du tout la même. Mais le résultat en vaut la peine et je suis assez satisfait du rendu final.
+
+Le grand défi en ajoutant des images c'est de garder de la place. Pour rappel, le site tourne sur un hébergement statique gratuit de 100 Mo. Donc il va falloir compresser les photos bien comme il faut. J'ai trouvé un convertisseur webp en ligne qui permet de réduire significativement la taille des images tout en conservant une bonne qualité visuelle. Cela devrait permettre d'ajouter des illustrations sans dépasser la limite de stockage. Je suis tout de même curieux de voir combien de place je peux gagner grâce à ce format d'image. Le but c'est de mettre une petite grille de photos (6 ou 8) clicables sur la page d'accueil. On verra ce que MkDocs me permet de faire, le plugin glightbox devrait faire le boulot.
+
+En attendant, le site reste fonctionnel et continue de fournir toutes les informations nécessaires sur la RecoveryBox. Les prochaines mises à jour devraient apporter une expérience utilisateur encore plus agréable et intuitive.
