@@ -239,6 +239,64 @@
   margin-top: 3rem;
 }
 
+/* Decorative logo background for the landing page */
+.rb-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.rb-hero {
+  padding: 4rem 2rem;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rb-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("../images/RB_logo_light.svg");
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.rb-hero::before {
+  background-position: right max(7rem, calc((100vw - 78rem) / 2 + 10rem)) top 5rem;
+  background-size: auto 20rem;
+  opacity: 0.16;
+}
+
+@media (min-width: 60em) {
+  .rb-hero::before {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 44.9375em) {
+  .rb-hero {
+    padding: 3rem 1rem;
+    min-height: 17rem;
+  }
+
+  .rb-hero::before {
+    background-position: center 2rem;
+    background-size: auto 14rem;
+    opacity: 0.1;
+  }
+}
+
+/* GLightbox gallery thumbnails */
+.md-typeset .rb-photo-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 /* Feature Grid */
 .rb-grid {
   display: grid;

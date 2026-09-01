@@ -11,17 +11,22 @@ hide:
   }
 </style>
 
+<section class="rb-hero" markdown>
+
 # RecoveryBox {: .md-typeset .md-display-1 }
 
 ## The digital solution when normalcy breaks down.
 
 
-[Explore Technical Wiki](https://recoverybox.fr/wiki/){ .md-button .md-button--primary }
-[Read the News](blog/index.md){ .md-button }
+[Technical Wiki](https://recoverybox.fr/wiki/){ .md-button .md-button--primary }
+[News](blog/index.md){ .md-button }
+[Gallery](#section-galerie){ .md-button }
+[Contact](#section-contact){ .md-button }
 
----
+</section>
 
-<div class="grid cards" markdown>
+
+<div id="section-galerie"class="grid cards" markdown>
 
 - [:material-battery-high: **An Autonomous Solution**](#section-autonomous)
 
@@ -63,6 +68,15 @@ hide:
 </div>
 
 ---
+
+<div class="grid cards rb-photo-grid" markdown>
+- ![box Outside](../images/RB_outside_simple.webp){.on-glb}
+- ![Battery Monitoring](../images/screen_bat.webp){.on-glb}
+- ![Library](../images/rb-library.webp){.on-glb}
+- ![Map](../images/rb-map.webp){.on-glb}
+- ![Meshtastic](../images/rb-meshtastic.webp){.on-glb}
+- ![Flatnotes](../images/rb-flatnotes.webp){.on-glb}
+</div>
 
 ## An Autonomous Solution {: #section-autonomous .rb-section-title }
 
@@ -177,3 +191,11 @@ Advantages of a screenless system:
 - **Designed for Teamwork** : In a crisis situation or during field missions, RecoveryBox acts as a centralized server. Each team member accesses the resources they need directly from their usual screen, without creating a physical bottleneck around the unit.
 
 Robust, energy-efficient, and collaborative, this architecture transforms RecoveryBox into a true shared digital command post.
+
+## Contact {: #section-contact .rb-section-title }
+
+For any question, suggestion, or support request, you can contact me at: [contact@recoverybox.fr](mailto:contact@recoverybox.fr).
+
+All of my RecoveryBox-related projects are available on [GitHub](https://github.com/mr-dgidgi).
+
+The YouTube channel is available here: [YouTube](https://www.youtube.com/channel/UCDNgRYKgnSsecWvqntt3EsA).
